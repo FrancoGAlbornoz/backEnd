@@ -17,7 +17,8 @@ class Usuario{
 
     }
     countMascotas(){
-
+        return console.log(`El numero de mascotas es: ${this.mascotas.length} `) 
+       
     }
     addBook(libroNuevo){
         this.libros.push(libroNuevo)
@@ -43,6 +44,8 @@ usuario.addBook({nombre:'El señor de los anillos', autor: 'J. R. R. Tolkien' })
 
 
 usuario.getFullName();
+
+usuario.countMascotas();
 
 console.log(usuario.mascotas);
 
