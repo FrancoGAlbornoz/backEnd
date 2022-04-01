@@ -2,7 +2,7 @@ const fs = require('fs')
 
 class Contenedor{
     constructor(miArchivo){
-        this.rutaArchivo = './miArchivo.txt'
+        this.rutaArchivo = './miArchivo.json'
     }
 
     getAll = async () => {
