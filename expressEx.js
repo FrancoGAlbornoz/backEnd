@@ -1,6 +1,27 @@
 
 const express = require('express')
 
+miArray= [{
+    title: "Escuadra",
+    price: 123.45,
+    id: 1
+  },
+  {
+    title: "Calculadora",
+    price: 234.56,
+    id: 2
+  },
+  {
+    title: "Globo Terráqueo",
+    price: 345.67,
+    id: 3
+  },
+  {
+    nombre: "Auriculares",
+    price: 345.67,
+    id: 4
+  }
+  ]
 
 const app = express()
 
@@ -8,38 +29,26 @@ app.get('/inicio', (req, res) => {
     res.send(`<h1>Bienvenido</h1>`)
     
 })
-function mostrar(){
-    $("#btn1").click(() => { 
-        $.getJSON(URLJSON, function (respuesta, estado) {
-            if(estado === "success"){
-                const misDatos = respuesta;
-                for (const dato of misDatos) {
-                  $("body").append(`<div>
-                                          <p>Producto : ${dato.title}</p>
-                                          <p> Precio : ${dato.price}</p>
-                                      </div>`)
-                  console.log(dato)
-              }  
-              }
-        });
-    });
-}
 
 app.get('/productos', (req, res) => {
-    const URLJSON = "/miArchivo.json"
-    mostrar(res.send(`<h1>Bienvenido</h1>
-    <p>Productos</p>
-    <button id="btn1">Mostrar</button>`
-    
-    ))
-    
-    
-    
+    res.send(miArray)
+
+
 })
 
+function RandArray(array){
+    var rand = Math.random()*array.length | 0;
+    var rValue = array[rand];
+    return rValue;
+}
+
+var rValue = RandArray(miArray);
+console.log(rValue)
 
 app.get('/productoRamdom', (req, res) => {
-    res.send()
+    res.send(rValue)
+
+    
 })
  
 const PORT = 8080
