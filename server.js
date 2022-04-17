@@ -2,16 +2,12 @@ const express = require('express')
 
 const producto = require("./desafio4.js")
 
-
-
 const app = express()
 
 app.use(express.json())
 
 
 app.use('/api/productos', producto)
-
-
 
 
 const PORT = 8080

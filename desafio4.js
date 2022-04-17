@@ -24,7 +24,13 @@ miArray= [{
     nombre: "Auriculares",
     price: 345.67,
     id: 4
-  }
+  },
+  {
+    nombre: "Teclado",
+    price: 345.67,
+    id: 5
+  }, 
+
   ]
 
 routerProds.get('/api/productos', ({ query }, res) => {
